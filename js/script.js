@@ -81,7 +81,7 @@ automateBackground.forEach((Btn) => {
   });
 });
 let backgroundLoacalItem = localStorage.getItem("background-option");
-let backGroundOption = true;
+let backGroundOption = false;
 if (backgroundLoacalItem !== null) {
   removeActiveClasses(automateBackground);
   backgroundLoacalItem === "true"
