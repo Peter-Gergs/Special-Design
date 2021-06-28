@@ -329,7 +329,8 @@ ul {
   transition: transform 700ms ease 0s;
 }
 .landing .slider img {
-  width: 100%;
+  width: 1920px;
+  max-width: 100%;
 }
 .landing .introduction-text {
   position: absolute;
