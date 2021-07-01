@@ -283,7 +283,7 @@ setInterval(() => {
 handleLetters();
 
 }, 10)
-textArea.addEventListener("keyup", () => {
+textArea.addEventListener("keypress", () => {
 handleLetters()
 });
 document.querySelector('input[type="submit"]').onclick = function (e) {
