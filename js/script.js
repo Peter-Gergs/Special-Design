@@ -279,10 +279,10 @@ allBullets.forEach((bullet) => {
 let textArea = document.querySelector("#message");
 let numbersSpan = document.querySelector("#letternums");
 let lettersNums = 150 - textArea.value.length;
-setInterval(() => {
+setTimeout(() => {
 handleLetters();
 
-}, 10)
+}, 0)
 textArea.addEventListener("keypress", () => {
 handleLetters()
 });
