@@ -81,7 +81,7 @@ automateBackground.forEach((Btn) => {
   });
 });
 let backgroundLoacalItem = localStorage.getItem("background-option");
-let backGroundOption = true;
+let backGroundOption = false;
 if (backgroundLoacalItem !== null) {
   removeActiveClasses(automateBackground);
   backgroundLoacalItem === "true"
@@ -161,8 +161,8 @@ document.addEventListener("click", function (e) {
   }
 });
 thelinks.onclick = function (e) {
-  e.stopPropagation()
-}
+  e.stopPropagation();
+};
 // Start Landing Page
 let landingPage = document.querySelector(".landing");
 let slider = document.querySelector("#slider");
@@ -274,4 +274,16 @@ allBullets.forEach((bullet) => {
       behavior: "smooth",
     });
   });
+});
+// text area letters numbers
+let textArea = document.querySelector("#message");
+let numbersSpan = document.querySelector("#letternums");
+let lettersNums = 150;
+numbersSpan.textContent = `Characters left: ${lettersNums}`;
+textArea.addEventListener("keyup", () => {
+  lettersNums = 150 - textArea.value.length
+  numbersSpan.textContent = `Characters left: ${lettersNums}`;
+  lettersNums < 0
+    ? (numbersSpan.style.color = "red")
+    : (numbersSpan.style.color = "#666");
 });

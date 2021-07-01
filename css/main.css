@@ -329,7 +329,8 @@ ul {
   transition: transform 700ms ease 0s;
 }
 .landing .slider img {
-  width: 100%;
+  width: 1920px;
+  max-width: 100%;
 }
 .landing .introduction-text {
   position: absolute;
@@ -882,6 +883,7 @@ ul {
 }
 .contact .container form div {
   flex-basis: 49%;
+  position: relative;
 }
 .contact form input:not([type="submit"]),
 .contact form textarea {
@@ -901,7 +903,20 @@ ul {
   height: 40px;
 }
 .contact form textarea {
-  height: 150px;
+  height: 135px;
+  margin-bottom: 30px;
+}
+#letternums {
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+}
+@media (min-width: 768px) {
+  #letternums {
+    position: absolute;
+    bottom: 55px;
+    right: 0;
+  }
 }
 .contact form input[type="submit"] {
   padding: 10px;
