@@ -278,12 +278,24 @@ allBullets.forEach((bullet) => {
 // text area letters numbers
 let textArea = document.querySelector("#message");
 let numbersSpan = document.querySelector("#letternums");
-let lettersNums = 150;
-numbersSpan.textContent = `Characters left: ${lettersNums}`;
+let lettersNums = 150 - textArea.value.length;
+setInterval(() => {
+handleLetters();
+
+}, 10)
 textArea.addEventListener("keyup", () => {
-  lettersNums = 150 - textArea.value.length
+handleLetters()
+});
+document.querySelector('input[type="submit"]').onclick = function (e) {
+  if (lettersNums < 0) {
+    e.preventDefault();
+    window.alert(`Message must be less 150 Characters`);
+  }
+};
+function handleLetters() {
+  lettersNums = 150 - textArea.value.length;
   numbersSpan.textContent = `Characters left: ${lettersNums}`;
   lettersNums < 0
     ? (numbersSpan.style.color = "red")
     : (numbersSpan.style.color = "#666");
-});
+}
